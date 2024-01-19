@@ -25,7 +25,6 @@ io.on("connection", (socket) => {
         userId,
         socketId: socket.id,
       });
-    console.log("onlineUsers", onlineUsers);
     io.emit("getOnlineUsers", onlineUsers);
   });
   socket.on("sendMessage", ({message,recipientId}:{message:Message,recipientId:string})=>{
